@@ -7,9 +7,7 @@ let scoredCategories;
 
 const rollButton = document.getElementById('rollButton');
 
-
 resetGame();
-
 
 rollButton.addEventListener('click', rollDice);
 
@@ -78,20 +76,51 @@ function calculateScore(category) {
 }
 
 function isSmallStraight(counts) {
-    const sequences = [
-        counts[1] && counts[2] && counts[3] && counts[4],
-        counts[2] && counts[3] && counts[4] && counts[5],
-        counts[3] && counts[4] && counts[5] && counts[6]
-    ];
-    return sequences.some(seq => seq);
+
+    let uniqueValues = [];
+    for (let i = 1; i <= 6; i++) {
+        if (counts[i] > 0) {
+            uniqueValues.push(i);
+        }
+    }
+
+
+    let consecutive = 1;
+    for (let i = 1; i < uniqueValues.length; i++) {
+        if (uniqueValues[i] === uniqueValues[i - 1] + 1) {
+            consecutive++;
+            if (consecutive >= 4) {
+                return true;
+            }
+        } else {
+            consecutive = 1;
+        }
+    }
+    return false;
 }
 
 function isLargeStraight(counts) {
-    const sequences = [
-        counts[1] && counts[2] && counts[3] && counts[4] && counts[5],
-        counts[2] && counts[3] && counts[4] && counts[5] && counts[6]
-    ];
-    return sequences.some(seq => seq);
+    
+    let uniqueValues = [];
+    for (let i = 1; i <= 6; i++) {
+        if (counts[i] > 0) {
+            uniqueValues.push(i);
+        }
+    }
+
+ 
+    let consecutive = 1;
+    for (let i = 1; i < uniqueValues.length; i++) {
+        if (uniqueValues[i] === uniqueValues[i - 1] + 1) {
+            consecutive++;
+            if (consecutive >= 5) {
+                return true;
+            }
+        } else {
+            consecutive = 1;
+        }
+    }
+    return false;
 }
 
 function sumDice() {
@@ -127,8 +156,6 @@ function resetTurn() {
         document.getElementById(`dice${i + 1}`).classList.remove("held");
         document.getElementById(`dice${i + 1}`).innerText = ''; 
     }
-    
-    
     clearUnscoredCategories();
 }
 
@@ -164,7 +191,9 @@ function checkGameOver() {
 function updateCategoryLabels() {
     document.querySelectorAll('.score-section label').forEach((label) => {
         const category = label.getAttribute('data-category');
-        if (canScore && !scoredCategories[category]) {
+        if (scoredCategories[category]) {
+            label.classList.add('disabled');
+        } else if (canScore) {
             label.classList.remove('disabled');
         } else {
             label.classList.add('disabled');
@@ -173,7 +202,7 @@ function updateCategoryLabels() {
 }
 
 function resetGame() {
-    
+  
     diceValues = [1, 1, 1, 1, 1];
     heldDice = [false, false, false, false, false];
     rollsLeft = 3;
@@ -201,16 +230,13 @@ function resetGame() {
         document.getElementById(`dice${i + 1}`).innerText = '';
     }
 
-
     const categories = Object.keys(scoredCategories);
     categories.forEach(category => {
         document.getElementById(`${category}Score`).innerText = '';
     });
 
-    
     document.getElementById("totalScore").innerText = `Total: 0`;
 
-    
     updateCategoryLabels();
 }
 

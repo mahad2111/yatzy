@@ -1,10 +1,8 @@
-# Portfolio Overview
+# Game Overview
 
-This portfolio showcases my projects, including a **Yahtzee Game** implementation and a professionally designed portfolio website. Each project highlights my skills in web development, user interface design, and responsive layouts.
+This project is a web-based implementation of the classic **Yahtzee** game. The game is built using HTML, CSS, and JavaScript, and provides an interactive UI for rolling dice, holding them, and scoring points based on traditional Yahtzee rules.
 
 ## Table of Contents
-- [Portfolio Overview](#portfolio-overview)
-- [Yahtzee Game](#yahtzee-game)
   - [Features](#features)
   - [How to Play](#how-to-play)
   - [Installation](#installation)
@@ -20,9 +18,6 @@ This portfolio showcases my projects, including a **Yahtzee Game** implementatio
 
 ---
 
-# Yahtzee Game 
-
-This project is a web-based implementation of the classic **Yahtzee** game. The game is built using HTML, CSS, and JavaScript, and provides an interactive UI for rolling dice, holding them, and scoring points based on traditional Yahtzee rules.
 
 ### Features
 - **Interactive Scorecard**: Displays various scoring categories like "Ones," "Twos," "Full House," and "Yahtzee."
@@ -39,7 +34,7 @@ This project is a web-based implementation of the classic **Yahtzee** game. The 
 ### Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/yahtzee-game.git
+   git clone https://github.com/mahad2111/yatzy
 
 # Portfolio Design
 
@@ -65,7 +60,7 @@ The site uses a bold, sans-serif font to ensure readability and emphasize header
 - **Flexbox**: The container layout uses Flexbox for aligning components centrally within the page.
 
 ### 3.2 Main Section
-![Main Section](images/scorecard-pic.png)
+![Main Section](images/main.png)
 - **Introduction**: This section contains the primary game elements, including the scorecard, dice section, and control buttons.
 - **Flexbox Layout**: Each element in the main section is organized using Flexbox to ensure they stay centered and properly spaced within the container.
 
