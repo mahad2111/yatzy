@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yahtzee Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="game-title">Yahtzee Game</h1>
+
+    <div class="game-container">
+   
+        <div class="scorecard">
+            <h3>Scorecard</h3>
+  
+            <div class="score-section">
+                <label data-category="ones">Ones</label>
+                <span id="onesScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="twos">Twos</label>
+                <span id="twosScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="threes">Threes</label>
+                <span id="threesScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="fours">Fours</label>
+                <span id="foursScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="fives">Fives</label>
+                <span id="fivesScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="sixes">Sixes</label>
+                <span id="sixesScore"></span>
+            </div>
+           
+            <div class="score-section">
+                <label data-category="threeOfKind">Three of a Kind</label>
+                <span id="threeOfKindScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="fourOfKind">Four of a Kind</label>
+                <span id="fourOfKindScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="fullHouse">Full House</label>
+                <span id="fullHouseScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="smallStraight">Small Straight</label>
+                <span id="smallStraightScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="largeStraight">Large Straight</label>
+                <span id="largeStraightScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="yahtzee">Yahtzee</label>
+                <span id="yahtzeeScore"></span>
+            </div>
+            <div class="score-section">
+                <label data-category="chance">Chance</label>
+                <span id="chanceScore"></span>
+            </div>
+            <div id="totalScore">Total: 0</div>
+        </div>
+
+       
+        <div class="dice-section">
+            <div id="dice1" class="dice"></div>
+            <div id="dice2" class="dice"></div>
+            <div id="dice3" class="dice"></div>
+            <div id="dice4" class="dice"></div>
+            <div id="dice5" class="dice"></div>
+        </div>
+
+       
+        <button id="rollButton">Roll Dice</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
