@@ -60,7 +60,7 @@ The site uses a bold, sans-serif font to ensure readability and emphasize header
 ## Layout Components
 
 ### 3.1 Header
-![Header](images/dice.png)
+![Header](images/yahtzee.png)
 - **Design**: The header displays the main title ("Yahtzee Game") centered at the top of the page, styled with a large, bold font in a vibrant green color.
 - **Flexbox**: The container layout uses Flexbox for aligning components centrally within the page.
 
